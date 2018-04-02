@@ -7,23 +7,27 @@ interactions:
       Connection: [keep-alive]
       User-Agent: [python-requests/2.18.4]
     method: GET
-    uri: https://myawslink.com/member-files/direct-sharing-1337/1234/23andme_valid.zip?Signature=nope&Expires=1522390374&AWSAccessKeyId=nope
+    uri: https://myawslink.com/member-files/direct-sharing-1337/1234/AncestryDNA_valid.zip?Signature=nope&Expires=1522390374&AWSAccessKeyId=nope
   response:
     body:
       string: !!binary |
-        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
+        UEsDBBQAAAAIAGxzgkznlR2yEgMAAEYFAAANABwAdGVzdF9maWxlLnR4dFVUCQADO6DCWqm5wlp1
+        eAsAAQT1AQAABBQAAABtVFGP2jgQfk6l/oeR+rLVIboJ3UW7bybxQq7ZmIud43g0iSmRQoycsJR/
+        fzNmaenpJKTgzHzfzHz+Jp9YV5l+cOckZ+D0CWo9aKjtqWutrj9++KR2TQ/bpjVw0j18N51xejA1
+        bM5wC9XDM9w/fYkevkT34RT/Pk+i5yiCUsVIkhAp4SvbtqYi/LFvuu+/Uzinz/BmXN/Y7hn+jsb3
+        Vyi1YN1eD/+PrGyHsMG4G3To0TPT2hPBNQzmx3CNg93C2R4dENoPt3V2/5NzXOEBQyPIsngMoBap
+        BGRL8xdRvDKVihzwDR5gLcoClryQImcZlJIDyxMKprniecITnzXnOWeZmKcxJhVcclbEC2IUebbG
+        AqkiSC7U77BXnhBiBEnK5rmQKo1HgO8XSKYWsCyLpZBc+g458H+WolAITZhicOlYlrM/eaxACZ9y
+        K5rixav03cYiT1IaSo5gVipYZpzhIDPMX7GCI5IpD6frEKs8Eyy5llmlWYaNQybyOS8IsyyEwpKY
+        MFsDqSN5XBapWuM4TJY4/Rh5Vguek3hwJbwoWbCVvxPiHvk4k7J8xU6wTJHKbyBeQCpRpPl85Af0
+        5PncD/Jemo6ejVhQHC+lwEFu7m+EbdFdxVyqYk0lX9hfqCRS4m+ONh+a6rIM6J6Ds29NTa73ftK0
+        EW8GFJtBbdpm35Av0dvHfddjQa6rHbRNZ4iuss6Z/mC7uofBohFlvsSc2GeDxaR3dgzvDEUBD93Q
+        bBs09J3r0wROO+M82cH2fbNpzeefDIg6IWtXI9oZQ7sw6KbzXNUOXW17uzc+YaN7c9CNA2RpBloD
+        ZMRNuJa9LNbuuNcdOLPFkmgX2BybtobJdBwit3V10+H+9zf1t7RIxO818RP/asE3hzvf4nh20xv3
+        hkrpAWMoKxW9w0+KHc4HP5JCxPVMujtzsI60pUYvhPgdOGlXw90fnwGtTHVPzbAD0hi/LCQxpf1n
+        CrQcLn4d/FIkuIoQXNoL358RZYZP91H4dRpNgjB4fJo8Rg+BChRFJuEkfJpG+H76EE2jMGDB/OOH
+        fwFQSwECHgMUAAAACABsc4JM55UdshIDAABGBQAADQAYAAAAAAABAAAApIEAAAAAdGVzdF9maWxl
+        LnR4dFVUBQADO6DCWnV4CwABBPUBAAAEFAAAAFBLBQYAAAAAAQABAFMAAABZAwAAAAA=
     headers:
       Accept-Ranges: [bytes]
       Content-Length: ['912']
@@ -37,7 +41,7 @@ interactions:
       x-amz-version-id: [code]
     status: {code: 200, message: OK}
 - request:
-    body: project_member_id=1234&metadata=%7B%22description%22%3A+%2223andMe+full+genotyping+data%2C+original+format%22%2C+%22tags%22%3A+%5B%2223andMe%22%2C+%22genotyping%22%5D%2C+%22creation_date%22%3A+%222018-03-30+00%3A12%3A54%2B00%3A00%22%7D&filename=23andMe-genotyping.txt
+    body: project_member_id=1234&metadata=%7B%22description%22%3A+%22AncestryDNA+full+genotyping+data%2C+original+format%22%2C+%22tags%22%3A+%5B%22AncestryDNA%22%2C+%22genotyping%22%5D%2C+%22creation_date%22%3A+%222018-03-30+00%3A12%3A54%2B00%3A00%22%7D&filename=AncestryDNA-genotyping.txt
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
@@ -48,7 +52,7 @@ interactions:
     method: POST
     uri: https://www.openhumans.org/api/direct-sharing/project/files/upload/direct/?access_token=myaccesstoken
   response:
-    body: {string: '{"id":12345,"url":"https://myawslink.com/member-files/direct-sharing-1337/1234/23andMe-genotyping.txt?Signature=nope%3D&Expires=1522390374&AWSAccessKeyId=nope"}'}
+    body: {string: '{"id":12345,"url":"https://myawslink.com/member-files/direct-sharing-1337/1234/AncestryDNA-genotyping.txt?Signature=nope%3D&Expires=1522390374&AWSAccessKeyId=nope"}'}
     headers:
       Allow: ['POST, OPTIONS']
       Cache-Control: ['no-cache, max-age=0, must-revalidate, no-store']
@@ -67,23 +71,29 @@ interactions:
     body: !!python/object/new:_io.BytesIO
       state: !!python/tuple
       - !!binary |
-        IyBUaGlzIGRhdGEgZmlsZSBnZW5lcmF0ZWQgYnkgMjNhbmRNZSBhdDogVGh1IE1hciAzMCAwMjo0
-        MzoyMSAyMDE3DQojCiMgQmVsb3cgaXMgYSB0ZXh0IHZlcnNpb24gb2YgeW91ciBkYXRhLiBGaWVs
-        ZHMgYXJlIFRBQi1zZXBhcmF0ZWQKIyBFYWNoIGxpbmUgY29ycmVzcG9uZHMgdG8gYSBzaW5nbGUg
-        U05QLiAgRm9yIGVhY2ggU05QLCB3ZSBwcm92aWRlIGl0cyBpZGVudGlmaWVyCiMgKGFuIHJzaWQg
-        b3IgYW4gaW50ZXJuYWwgaWQpLCBpdHMgbG9jYXRpb24gb24gdGhlIHJlZmVyZW5jZSBodW1hbiBn
-        ZW5vbWUsIGFuZCB0aGUKIyBnZW5vdHlwZSBjYWxsIG9yaWVudGVkIHdpdGggcmVzcGVjdCB0byB0
-        aGUgcGx1cyBzdHJhbmQgb24gdGhlIGh1bWFuIHJlZmVyZW5jZQojIHNlcXVlbmNlLiAgICAgV2Ug
-        YXJlIHVzaW5nIHJlZmVyZW5jZSBodW1hbiBhc3NlbWJseSBidWlsZCAzNi4gIE5vdGUgdGhhdCBp
-        dCBpcyBwb3NzaWJsZQojIHRoYXQgZGF0YSBkb3dubG9hZGVkIGF0IGRpZmZlcmVudCB0aW1lcyBt
-        YXkgYmUgZGlmZmVyZW50IGR1ZSB0byBvbmdvaW5nIGltcHJvdmVtZW50cwojIGluIG91ciBhYmls
-        aXR5IHRvIGNhbGwgZ2Vub3R5cGVzLiBNb3JlIGluZm9ybWF0aW9uIGFib3V0IHRoZXNlIGNoYW5n
-        ZXMgY2FuIGJlIGZvdW5kIGF0OgojIGh0dHBzOi8vd3d3LjIzYW5kbWUuY29tL3lvdS9kb3dubG9h
-        ZC9yZXZpc2lvbnMvCiMKIyBNb3JlIGluZm9ybWF0aW9uIG9uIHJlZmVyZW5jZSBodW1hbiBhc3Nl
-        bWJseSBidWlsZCAzNjoKIyBodHRwOi8vd3d3Lm5jYmkubmxtLm5paC5nb3YvcHJvamVjdHMvbWFw
-        dmlldy9tYXBfc2VhcmNoLmNnaT90YXhpZD05NjA2JmJ1aWxkPTM2CiMKIyByc2lkCWNocm9tb3Nv
-        bWUJcG9zaXRpb24JZ2Vub3R5cGUKcnMxMjM0CTEJODIxNTQJQUEKcnMyMzQ1CTEJNzUyNTY2CUdD
-        Cg==
+        I0FuY2VzdHJ5RE5BIHJhdyBkYXRhIGRvd25sb2FkCiNEYXRhIHdhcyBjb2xsZWN0ZWQgdXNpbmcg
+        QW5jZXN0cnlETkEgYXJyYXkgdmVyc2lvbjogVjIuMAojRGF0YSBpcyBmb3JtYXR0ZWQgdXNpbmcg
+        QW5jZXN0cnlETkEgY29udmVydGVyIHZlcnNpb246IFYxLjAKI0JlbG93IGlzIGEgdGV4dCB2ZXJz
+        aW9uIG9mIHlvdXIgRE5BIGZpbGUgZnJvbSBBbmNlc3RyeS5jb20gRE5BLCBMTEMuICBUSElTDQoj
+        SU5GT1JNQVRJT04gSVMgRk9SIFlPVVIgUEVSU09OQUwgVVNFIEFORCBJUyBJTlRFTkRFRCBGT1Ig
+        R0VORUFMT0dJQ0FMIFJFU0VBUkNIDQojT05MWS4gIElUIElTIE5PVCBJTlRFTkRFRCBGT1IgTUVE
+        SUNBTCwgRElBR05PU1RJQywgT1IgSEVBTFRIIFBVUlBPU0VTLiAgVEhFIEVYUE9SVEVEIERBVEEg
+        SVMNCiNTVUJKRUNUIFRPIFRIRSBBbmNlc3RyeUROQSBURVJNUyBBTkQgQ09ORElUSU9OUywgQlVU
+        IFBMRUFTRSBCRSBBV0FSRSBUSEFUIFRIRQ0KI0RPV05MT0FERUQgREFUQSBXSUxMIE5PIExPTkdF
+        UiBCRSBQUk9URUNURUQgQlkgT1VSIFNFQ1VSSVRZIE1FQVNVUkVTLg0KI1dIRU4gWU9VIERPV05M
+        T0FEIFlPVVIgUkFXIEROQSBEQVRBLCBZT1UgQVNTVU1FIEFMTCBSSVNLIE9GIFNUT1JJTkcsDQoj
+        U0VDVVJJTkcgQU5EIFBST1RFQ1RJTkcgWU9VUiBEQVRBLiAgRk9SIE1PUkUgSU5GT1JNQVRJT04s
+        IFNFRSBBTkNFU1RSWUROQSBGQVFTLg0KIw0KI0dlbmV0aWMgZGF0YSBpcyBwcm92aWRlZCBiZWxv
+        dyBhcyBmaXZlIFRBQiBkZWxpbWl0ZWQgY29sdW1ucy4gIEVhY2ggbGluZQ0KI2NvcnJlc3BvbmRz
+        IHRvIGEgU05QLiAgQ29sdW1uIG9uZSBwcm92aWRlcyB0aGUgU05QIGlkZW50aWZpZXIgKHJzSUQg
+        d2hlcmUNCiNwb3NzaWJsZSkuICBDb2x1bW5zIHR3byBhbmQgdGhyZWUgY29udGFpbiB0aGUgY2hy
+        b21vc29tZSBhbmQgYmFzZXBhaXIgcG9zaXRpb24NCiNvZiB0aGUgU05QIHVzaW5nIGh1bWFuIHJl
+        ZmVyZW5jZSBidWlsZCAzNy4xIGNvb3JkaW5hdGVzLiAgQ29sdW1ucyBmb3VyIGFuZCBmaXZlDQoj
+        Y29udGFpbiB0aGUgdHdvIGFsbGVsZXMgb2JzZXJ2ZWQgYXQgdGhpcyBTTlAgKGdlbm90eXBlKS4g
+        IFRoZSBnZW5vdHlwZSBpcyByZXBvcnRlZA0KI29uIHRoZSBmb3J3YXJkICgrKSBzdHJhbmQgd2l0
+        aCByZXNwZWN0IHRvIHRoZSBodW1hbiByZWZlcmVuY2UuDQpyc2lkCWNocm9tb3NvbWUJcG9zaXRp
+        b24JYWxsZWxlMQlhbGxlbGUycnMxOTAyMTQ3MjMJMQk2OTM2MjUJVAlUCnJzMzEzMTk3MgkxCTc1
+        MjcyMQlBCUcK
       - 0
       - null
     headers:
@@ -93,7 +103,7 @@ interactions:
       Content-Length: ['913']
       User-Agent: [python-requests/2.18.4]
     method: PUT
-    uri: https://myawslink.com/member-files/direct-sharing-1337/1234/23andMe-genotyping.txt?Signature=nope%3D&Expires=1522390374&AWSAccessKeyId=nope
+    uri: https://myawslink.com/member-files/direct-sharing-1337/1234/AncestryDNA-genotyping.txt?Signature=nope%3D&Expires=1522390374&AWSAccessKeyId=nope
   response:
     body: {string: ''}
     headers:
@@ -133,7 +143,7 @@ interactions:
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
-    body: project_member_id=1234&metadata=%7B%22description%22%3A+%2223andMe+full+genotyping+data%2C+VCF+format%22%2C+%22tags%22%3A+%5B%2223andMe%22%2C+%22genotyping%22%2C+%22vcf%22%5D%2C+%22creation_date%22%3A+%222018-03-30+00%3A12%3A55%2B00%3A00%22%7D&filename=23andMe-genotyping.vcf.bz2
+    body: project_member_id=1234&metadata=%7B%22description%22%3A+%22AncestryDNA+full+genotyping+data%2C+VCF+format%22%2C+%22tags%22%3A+%5B%22AncestryDNA%22%2C+%22genotyping%22%2C+%22vcf%22%5D%2C+%22creation_date%22%3A+%222018-03-30+00%3A12%3A55%2B00%3A00%22%7D&filename=AncestryDNA-genotyping.vcf.bz2
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
@@ -144,7 +154,7 @@ interactions:
     method: POST
     uri: https://www.openhumans.org/api/direct-sharing/project/files/upload/direct/?access_token=myaccesstoken
   response:
-    body: {string: '{"id":23456,"url":"https://myaws.com/member-files/direct-sharing-1337/1234/23andMe-genotyping.vcf.bz2?Signature=nope&Expires=1522390375&AWSAccessKeyId=nope"}'}
+    body: {string: '{"id":23456,"url":"https://myaws.com/member-files/direct-sharing-1337/1234/AncestryDNA-genotyping.vcf.bz2?Signature=nope&Expires=1522390375&AWSAccessKeyId=nope"}'}
     headers:
       Allow: ['POST, OPTIONS']
       Cache-Control: ['must-revalidate, max-age=0, no-cache, no-store']
@@ -163,12 +173,12 @@ interactions:
     body: !!python/object/new:_io.BytesIO
       state: !!python/tuple
       - !!binary |
-        QlpoOTFBWSZTWc1ktBcAABPfgAAwGAf/9y/n/xC/59+gMAEK1bEUxGgZEZGmTEyekaMgehDQMQap
-        k0001NigzKGjQGQAAA0aETJT9Sep5NNENGnqAAAAyADSDUwAUqGB2ORaZGgqtNNDc5YvrgJiQJ8i
-        IAUhUC07NkQKOIXy9qosg9VXfPSRQp0yieB0RxG0GQJTpxJjiS8Uw+lbqSCyrtKnGMMCfoYZ5RDk
-        EFTS1w89AME7ostF5GbtUwdu0i4mkkizIlPTmW4I+MQWGmcaoBCitcFQrCgXThDORAUPU9i5tZ77
-        stuM2ILRQETWY1I7kurGxfeNW08O8FytnAjxSR5M4YwEZqAa/gKRmgFA37TGAUR0kd5YMeYqqG1D
-        0yJSMrzc6Vt51vCFzJChaa59EyKARbQyCEiC2GSPQ1lclVbJ1skfNvNUwMQJ/i7kinChIZrJaC4=
+        QlpoOTFBWSZTWc3mFj0AAA7fgAAwGAf+9y/n/zC/59+gMADspEQibU2mSepkBkabUZB6QaaeiBpk
+        OYACYAAmAAAAAA1VP8g1KeYqfqaan6FPTUDQ9IBjSaBtIiKE7x42pFRFnn2l2PfRhzRK9SqEBZRB
+        Uc3fMLWr4mpE0rltu/S6T8KlXtl3vkDwUs8EhXkjaXRaBlRwtru6zuIap2YmNITYN3btHzvd7+T9
+        uMHFQsxVmUrHYfoI63jOtfMjCHxNaURmCuAjaWIYQgEY/Y5iWXhemwarqLg8xaGqVnNxGSsyN9w4
+        PDzmpP6CcrjpYrQnDLnVO7xBU/Y4lJC5L6nOBwbxNl04osYSlvGcrF/ylStZGNb7aM14honEBGs0
+        sTUSn1QahTGJ34RFvI6aZyNEEjXZugZ3V/xdyRThQkM3mFj0
       - 0
       - null
     headers:
@@ -178,7 +188,7 @@ interactions:
       Content-Length: ['341']
       User-Agent: [python-requests/2.18.4]
     method: PUT
-    uri: https://myaws.com/member-files/direct-sharing-1337/1234/23andMe-genotyping.vcf.bz2?Signature=nope&Expires=1522390375&AWSAccessKeyId=nope
+    uri: https://myaws.com/member-files/direct-sharing-1337/1234/AncestryDNA-genotyping.vcf.bz2?Signature=nope&Expires=1522390375&AWSAccessKeyId=nope
   response:
     body: {string: ''}
     headers:

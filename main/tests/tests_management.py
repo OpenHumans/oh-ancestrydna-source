@@ -35,9 +35,9 @@ class ManagementTestCase(TestCase):
                            "https://www.openhumans.org/api/direct-sharing/project/exchange-member/?access_token=myaccesstoken",
                            json={'data':
                                  [{'id': 34567,
-                                   'basename': '23andme_valid.txt',
+                                   'basename': 'AncestryDNA_valid.txt',
                                    'created': '2018-03-30T00:09:36.563486Z',
-                                   'download_url': 'https://myawslink.com/member-files/direct-sharing-1337/1234/23andme_valid.txt?Signature=nope&Expires=1522390374&AWSAccessKeyId=nope',
+                                   'download_url': 'https://myawslink.com/member-files/direct-sharing-1337/1234/AncestryDNA_valid.txt?Signature=nope&Expires=1522390374&AWSAccessKeyId=nope',
                                    'metadata': {'tags': ['bar'], 'description': 'foo'},
                                    'source': 'direct-sharing-1337'}]})
             call_command('process_files')

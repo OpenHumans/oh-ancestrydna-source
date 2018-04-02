@@ -3,7 +3,7 @@ import vcr
 from django.conf import settings
 from django.core.management import call_command
 from open_humans.models import OpenHumansMember
-from main.celery import read_reference, clean_raw_23andme
+from main.celery import read_reference, clean_raw_ancestrydna
 from main.celery_helper import vcf_header
 import os
 import tempfile
@@ -38,9 +38,9 @@ class ParsingTestCase(TestCase):
         """
         Test function to read the reference file.
         """
-        REF_23ANDME_FILE = os.path.join(os.path.dirname(__file__),
+        REF_ANCESTRYDNA_FILE = os.path.join(os.path.dirname(__file__),
                                         'fixtures/test_reference.txt')
-        ref = read_reference(REF_23ANDME_FILE)
+        ref = read_reference(REF_ANCESTRYDNA_FILE)
         self.assertEqual(ref, {'1': {'82154': 'A', '752566': 'G'}})
 
     def test_vcf_header(self):
@@ -48,7 +48,7 @@ class ParsingTestCase(TestCase):
         Test function to create a VCF header
         """
         hd = vcf_header(
-            source='23andme',
+            source='AncestryDNA',
             reference='http://example.com',
             format_info=['<ID=GT,Number=1,Type=String,Description="GT">'])
         self.assertEqual(len(hd), 6)
@@ -58,17 +58,17 @@ class ParsingTestCase(TestCase):
                                   '##reference',
                                   '##FORMAT',
                                   '#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER' +
-                                  '\tINFO\tFORMAT\t23ANDME_DATA']
+                                  '\tINFO\tFORMAT\tANCESTRYDNA_DATA']
         self.assertEqual([i.split("=")[0] for i in hd], expected_header_fields)
 
-    def test_23andme_cleaning(self):
+    def test_ancestrydna_cleaning(self):
         """
         Test that cleanup works as expected
         """
         with requests_mock.Mocker() as m:
-            get_url = 'http://example.com/23andme_file.txt'
+            get_url = 'http://example.com/AncestryDNA_file.txt'
             closed_input_file = os.path.join(os.path.dirname(__file__),
-                                             'fixtures/23andme_invalid.txt')
+                                             'fixtures/ancestrydna_invalid.txt')
             fhandle = open(closed_input_file, "rb")
             content = fhandle.read()
             m.register_uri('GET',
@@ -79,12 +79,11 @@ class ParsingTestCase(TestCase):
             tf_in.write(requests.get(get_url).content)
             tf_in.flush()
 
-            cleaned_input = clean_raw_23andme(tf_in)
+            cleaned_input, chr_sex = clean_raw_ancestrydna(tf_in)
             cleaned_input.seek(0)
             lines = cleaned_input.read()
             self.assertEqual(lines.find('John Doe'), -1)
-            self.assertNotEqual(lines.find('data file generated'), -1)
-
+            
     @vcr.use_cassette('main/tests/fixtures/process_file.yaml',
                       record_mode='none')
     def test_process_file(self):
@@ -94,9 +93,9 @@ class ParsingTestCase(TestCase):
 
         member = {"project_member_id": "1234"}
         dfile = {'id': 34567,
-                 'basename': '23andme_valid.txt',
+                 'basename': 'AncestryDNA_valid.txt',
                  'created': '2018-03-30T00:09:36.563486Z',
-                 'download_url': 'https://myawslink.com/member-files/direct-sharing-1337/1234/23andme_valid.txt?Signature=nope&Expires=1522390374&AWSAccessKeyId=nope',
+                 'download_url': 'https://myawslink.com/member-files/direct-sharing-1337/1234/AncestryDNA_valid.txt?Signature=nope&Expires=1522390374&AWSAccessKeyId=nope',
                  'metadata': {'tags': ['bar'], 'description': 'foo'},
                  'source': 'direct-sharing-1337'}
 
@@ -111,9 +110,9 @@ class ParsingTestCase(TestCase):
 
         member = {"project_member_id": "1234"}
         dfile = {'id': 34567,
-                 'basename': '23andme_valid.txt.bz2',
+                 'basename': 'AncestryDNA_valid.txt.bz2',
                  'created': '2018-03-30T00:09:36.563486Z',
-                 'download_url': 'https://myawslink.com/member-files/direct-sharing-1337/1234/23andme_valid.txt.bz2?Signature=nope&Expires=1522390374&AWSAccessKeyId=nope',
+                 'download_url': 'https://myawslink.com/member-files/direct-sharing-1337/1234/AncestryDNA_valid.txt.bz2?Signature=nope&Expires=1522390374&AWSAccessKeyId=nope',
                  'metadata': {'tags': ['bar'], 'description': 'foo'},
                  'source': 'direct-sharing-1337'}
 
@@ -128,9 +127,9 @@ class ParsingTestCase(TestCase):
 
         member = {"project_member_id": "1234"}
         dfile = {'id': 34567,
-                 'basename': '23andme_valid.txt.gz',
+                 'basename': 'AncestryDNA_valid.txt.gz',
                  'created': '2018-03-30T00:09:36.563486Z',
-                 'download_url': 'https://myawslink.com/member-files/direct-sharing-1337/1234/23andme_valid.txt.gz?Signature=nope&Expires=1522390374&AWSAccessKeyId=nope',
+                 'download_url': 'https://myawslink.com/member-files/direct-sharing-1337/1234/AncestryDNA_valid.txt.gz?Signature=nope&Expires=1522390374&AWSAccessKeyId=nope',
                  'metadata': {'tags': ['bar'], 'description': 'foo'},
                  'source': 'direct-sharing-1337'}
 
@@ -145,9 +144,9 @@ class ParsingTestCase(TestCase):
 
         member = {"project_member_id": "1234"}
         dfile = {'id': 34567,
-                 'basename': '23andme_valid.zip',
+                 'basename': 'AncestryDNA_valid.zip',
                  'created': '2018-03-30T00:09:36.563486Z',
-                 'download_url': 'https://myawslink.com/member-files/direct-sharing-1337/1234/23andme_valid.zip?Signature=nope&Expires=1522390374&AWSAccessKeyId=nope',
+                 'download_url': 'https://myawslink.com/member-files/direct-sharing-1337/1234/AncestryDNA_valid.zip?Signature=nope&Expires=1522390374&AWSAccessKeyId=nope',
                  'metadata': {'tags': ['bar'], 'description': 'foo'},
                  'source': 'direct-sharing-1337'}
 

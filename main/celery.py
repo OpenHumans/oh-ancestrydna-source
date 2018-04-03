@@ -16,7 +16,7 @@ from datetime import datetime
 
 import arrow
 from .celery_helper import vcf_header, temp_join, open_archive, sort_vcf
-from .celery_helper import HEADER_V1, HEADER_V2, HEADER_V3
+from .vcf_helper import HEADER_V1, HEADER_V2, HEADER_V3, CHROM_MAP
 
 # set the default Django settings module for the 'celery' program.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'oh_data_uploader.settings')
@@ -36,34 +36,6 @@ VCF_FIELDS = ['CHROM', 'POS', 'ID', 'REF', 'ALT', 'QUAL', 'FILTER',
 
 # The only non-commented-out header line. We want to ignore it.
 EXPECTED_COLUMNS_HEADER = 'rsid\tchromosome\tposition\tallele1\tallele2'
-
-CHROM_MAP = {
-    '1': '1',
-    '2': '2',
-    '3': '3',
-    '4': '4',
-    '5': '5',
-    '6': '6',
-    '7': '7',
-    '8': '8',
-    '9': '9',
-    '10': '10',
-    '11': '11',
-    '12': '12',
-    '13': '13',
-    '14': '14',
-    '15': '15',
-    '16': '16',
-    '17': '17',
-    '18': '18',
-    '19': '19',
-    '20': '20',
-    '21': '21',
-    '22': '22',
-    '23': 'X',
-    '24': 'Y',
-    '25': 'X',
-}
 
 logger = logging.getLogger(__name__)
 

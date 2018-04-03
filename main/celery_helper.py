@@ -13,6 +13,53 @@ logger = logging.getLogger(__name__)
 VCF_FIELDS = ['CHROM', 'POS', 'ID', 'REF', 'ALT', 'QUAL', 'FILTER',
               'INFO', 'FORMAT', 'ANCESTRYDNA_DATA']
 
+HEADER_V1 = [
+    "#Below is a text version of your DNA file from Ancestry.com DNA, LLC.  THIS",
+    "#INFORMATION IS FOR YOUR PERSONAL USE AND IS INTENDED FOR GENEALOGICAL RESEARCH",
+    "#ONLY.  IT IS NOT INTENDED FOR MEDICAL OR HEALTH PURPOSES.  THE EXPORTED DATA IS",
+    "#SUBJECT TO THE AncestryDNA TERMS AND CONDITIONS, BUT PLEASE BE AWARE THAT THE",
+    "#DOWNLOADED DATA WILL NO LONGER BE PROTECTED BY OUR SECURITY MEASURES."
+    "#",
+    "#Genetic data is provided below as five TAB delimited columns.  Each line",
+    "#corresponds to a SNP.  Column one provides the SNP identifier (rsID where",
+    "#possible).  Columns two and three contain the chromosome and basepair position",
+    "#of the SNP using human reference build 37.1 coordinates.  Columns four and five",
+    "#contain the two alleles observed at this SNP (genotype).  The genotype is reported",
+    "#on the forward (+) strand with respect to the human reference.",
+]
+HEADER_V2 = [
+    "#Below is a text version of your DNA file from Ancestry.com DNA, LLC.  THIS",
+    "#INFORMATION IS FOR YOUR PERSONAL USE AND IS INTENDED FOR GENEALOGICAL RESEARCH",
+    "#ONLY.  IT IS NOT INTENDED FOR MEDICAL OR HEALTH PURPOSES.  THE EXPORTED DATA IS",
+    "#SUBJECT TO THE AncestryDNA TERMS AND CONDITIONS, BUT PLEASE BE AWARE THAT THE",
+    "#DOWNLOADED DATA WILL NO LONGER BE PROTECTED BY OUR SECURITY MEASURES.",
+    "#WHEN YOU DOWNLOAD YOUR RAW DNA DATA, YOU ASSUME ALL RISK OF STORING,",
+    "#SECURING AND PROTECTING YOUR DATA.  FOR MORE INFORMATION, SEE ANCESTRYDNA FAQS.",
+    "#",
+    "#Genetic data is provided below as five TAB delimited columns.  Each line",
+    "#corresponds to a SNP.  Column one provides the SNP identifier (rsID where",
+    "#possible).  Columns two and three contain the chromosome and basepair position",
+    "#of the SNP using human reference build 37.1 coordinates.  Columns four and five",
+    "#contain the two alleles observed at this SNP (genotype).  The genotype is reported",
+    "#on the forward (+) strand with respect to the human reference.",
+]
+HEADER_V3 = [
+    "#Below is a text version of your DNA file from Ancestry.com DNA, LLC.  THIS",
+    "#INFORMATION IS FOR YOUR PERSONAL USE AND IS INTENDED FOR GENEALOGICAL RESEARCH",
+    "#ONLY.  IT IS NOT INTENDED FOR MEDICAL, DIAGNOSTIC, OR HEALTH PURPOSES.  THE EXPORTED DATA IS",
+    "#SUBJECT TO THE AncestryDNA TERMS AND CONDITIONS, BUT PLEASE BE AWARE THAT THE",
+    "#DOWNLOADED DATA WILL NO LONGER BE PROTECTED BY OUR SECURITY MEASURES.",
+    "#WHEN YOU DOWNLOAD YOUR RAW DNA DATA, YOU ASSUME ALL RISK OF STORING,",
+    "#SECURING AND PROTECTING YOUR DATA.  FOR MORE INFORMATION, SEE ANCESTRYDNA FAQS.",
+    "#",
+    "#Genetic data is provided below as five TAB delimited columns.  Each line",
+    "#corresponds to a SNP.  Column one provides the SNP identifier (rsID where",
+    "#possible).  Columns two and three contain the chromosome and basepair position",
+    "#of the SNP using human reference build 37.1 coordinates.  Columns four and five",
+    "#contain the two alleles observed at this SNP (genotype).  The genotype is reported",
+    "#on the forward (+) strand with respect to the human reference.",
+]
+
 CHROM_ORDER = {
     'chr1': '1',
     'chr2': '2',
@@ -98,21 +145,22 @@ CHROM_ORDER = {
 def sort_vcf(input_file):
     outputfile = tempfile.TemporaryFile()
     sortingfile = tempfile.TemporaryFile()
-    next_line = input_file.read()
+    next_line = input_file.readline()
     while next_line and next_line.startswith('#'):
         outputfile.write(next_line.encode())
         try:
-            next_line = input_file.read()
+            next_line = input_file.readline()
         except StopIteration:
             next_line = None
             break
     while next_line:
         for key in CHROM_ORDER:
             if next_line.startswith(key + '\t'):
-                sortingfile.write(CHROM_ORDER[key] + '\t' + next_line)
+                out_line = "{}\t{}".format(CHROM_ORDER[key], next_line)
+                sortingfile.write(out_line.encode())
                 break
         try:
-            next_line = input_file.read()
+            next_line = input_file.readline()
         except StopIteration:
             next_line = None
             break
@@ -124,7 +172,7 @@ def sort_vcf(input_file):
                                 stdin=sort_proc.stdout,
                                 stdout=subprocess.PIPE)
     for line in cut_proc.stdout:
-        outputfile.write(line.encode())
+        outputfile.write(line)
     outputfile.seek(0)
     return outputfile
 

@@ -16,6 +16,7 @@ from datetime import datetime
 
 import arrow
 from .celery_helper import vcf_header, temp_join, open_archive, sort_vcf
+from .celery_helper import HEADER_V1, HEADER_V2, HEADER_V3
 
 # set the default Django settings module for the 'celery' program.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'oh_data_uploader.settings')
@@ -32,52 +33,6 @@ REFERENCE_GENOME_URL = ('http://hgdownload-test.cse.ucsc.edu/' +
 VCF_FIELDS = ['CHROM', 'POS', 'ID', 'REF', 'ALT', 'QUAL', 'FILTER',
               'INFO', 'FORMAT', 'ANCESTRYDNA_DATA']
 
-HEADER_V1 = [
-    "#Below is a text version of your DNA file from Ancestry.com DNA, LLC.  THIS",
-    "#INFORMATION IS FOR YOUR PERSONAL USE AND IS INTENDED FOR GENEALOGICAL RESEARCH",
-    "#ONLY.  IT IS NOT INTENDED FOR MEDICAL OR HEALTH PURPOSES.  THE EXPORTED DATA IS",
-    "#SUBJECT TO THE AncestryDNA TERMS AND CONDITIONS, BUT PLEASE BE AWARE THAT THE",
-    "#DOWNLOADED DATA WILL NO LONGER BE PROTECTED BY OUR SECURITY MEASURES."
-    "#",
-    "#Genetic data is provided below as five TAB delimited columns.  Each line",
-    "#corresponds to a SNP.  Column one provides the SNP identifier (rsID where",
-    "#possible).  Columns two and three contain the chromosome and basepair position",
-    "#of the SNP using human reference build 37.1 coordinates.  Columns four and five",
-    "#contain the two alleles observed at this SNP (genotype).  The genotype is reported",
-    "#on the forward (+) strand with respect to the human reference.",
-]
-HEADER_V2 = [
-    "#Below is a text version of your DNA file from Ancestry.com DNA, LLC.  THIS",
-    "#INFORMATION IS FOR YOUR PERSONAL USE AND IS INTENDED FOR GENEALOGICAL RESEARCH",
-    "#ONLY.  IT IS NOT INTENDED FOR MEDICAL OR HEALTH PURPOSES.  THE EXPORTED DATA IS",
-    "#SUBJECT TO THE AncestryDNA TERMS AND CONDITIONS, BUT PLEASE BE AWARE THAT THE",
-    "#DOWNLOADED DATA WILL NO LONGER BE PROTECTED BY OUR SECURITY MEASURES.",
-    "#WHEN YOU DOWNLOAD YOUR RAW DNA DATA, YOU ASSUME ALL RISK OF STORING,",
-    "#SECURING AND PROTECTING YOUR DATA.  FOR MORE INFORMATION, SEE ANCESTRYDNA FAQS.",
-    "#",
-    "#Genetic data is provided below as five TAB delimited columns.  Each line",
-    "#corresponds to a SNP.  Column one provides the SNP identifier (rsID where",
-    "#possible).  Columns two and three contain the chromosome and basepair position",
-    "#of the SNP using human reference build 37.1 coordinates.  Columns four and five",
-    "#contain the two alleles observed at this SNP (genotype).  The genotype is reported",
-    "#on the forward (+) strand with respect to the human reference.",
-]
-HEADER_V3 = [
-    "#Below is a text version of your DNA file from Ancestry.com DNA, LLC.  THIS",
-    "#INFORMATION IS FOR YOUR PERSONAL USE AND IS INTENDED FOR GENEALOGICAL RESEARCH",
-    "#ONLY.  IT IS NOT INTENDED FOR MEDICAL, DIAGNOSTIC, OR HEALTH PURPOSES.  THE EXPORTED DATA IS",
-    "#SUBJECT TO THE AncestryDNA TERMS AND CONDITIONS, BUT PLEASE BE AWARE THAT THE",
-    "#DOWNLOADED DATA WILL NO LONGER BE PROTECTED BY OUR SECURITY MEASURES.",
-    "#WHEN YOU DOWNLOAD YOUR RAW DNA DATA, YOU ASSUME ALL RISK OF STORING,",
-    "#SECURING AND PROTECTING YOUR DATA.  FOR MORE INFORMATION, SEE ANCESTRYDNA FAQS.",
-    "#",
-    "#Genetic data is provided below as five TAB delimited columns.  Each line",
-    "#corresponds to a SNP.  Column one provides the SNP identifier (rsID where",
-    "#possible).  Columns two and three contain the chromosome and basepair position",
-    "#of the SNP using human reference build 37.1 coordinates.  Columns four and five",
-    "#contain the two alleles observed at this SNP (genotype).  The genotype is reported",
-    "#on the forward (+) strand with respect to the human reference.",
-]
 
 # The only non-commented-out header line. We want to ignore it.
 EXPECTED_COLUMNS_HEADER = 'rsid\tchromosome\tposition\tallele1\tallele2'

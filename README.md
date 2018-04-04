@@ -1,7 +1,6 @@
-[![Build Status](https://travis-ci.org/OpenHumans/oh-23andme-source.svg?branch=master)](https://travis-ci.org/OpenHumans/oh-23andme-source)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/a21c2545bf9356bf1277/test_coverage)](https://codeclimate.com/github/OpenHumans/oh-23andme-source/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a21c2545bf9356bf1277/maintainability)](https://codeclimate.com/github/OpenHumans/oh-23andme-source/maintainability)
-
+[![Build Status](https://travis-ci.org/OpenHumans/oh-ancestrydna-source.svg?branch=master)](https://travis-ci.org/OpenHumans/oh-ancestrydna-source)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/270ba48837d32c387e6d/test_coverage)](https://codeclimate.com/github/OpenHumans/oh-ancestrydna-source/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/270ba48837d32c387e6d/maintainability)](https://codeclimate.com/github/OpenHumans/oh-ancestrydna-source/maintainability)
 
 # The *AncestryDNA* upload project for *Open Humans*
 

@@ -1,1 +1,1 @@
-Welcome to the *23andMe* integration project for [*Open Humans*](https://www.openhumans.org). To get started just log in with your *Open Humans* account to the right and you will find a step-by-step guide on how to upload your genetic data.
+Welcome to the *AncestryDNA* integration project for [*Open Humans*](https://www.openhumans.org). To get started just log in with your *Open Humans* account to the right and you will find a step-by-step guide on how to upload your genetic data.

@@ -7,6 +7,7 @@ from django.db import models
 import requests
 
 OH_BASE_URL = settings.OPENHUMANS_OH_BASE_URL
+OH_TOKEN_URL = OH_BASE_URL + '/oauth2/token/'
 OH_API_BASE = OH_BASE_URL + '/api/direct-sharing'
 OH_DELETE_FILES = OH_API_BASE + '/project/files/delete/'
 OH_DIRECT_UPLOAD = OH_API_BASE + '/project/files/upload/direct/'
@@ -85,7 +86,7 @@ class OpenHumansMember(models.Model):
         Refresh access token.
         """
         response = requests.post(
-            'https://www.openhumans.org/oauth2/token/',
+            OH_TOKEN_URL,
             data={
                 'grant_type': 'refresh_token',
                 'refresh_token': self.refresh_token},

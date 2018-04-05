@@ -8,20 +8,20 @@ class Command(BaseCommand):
     help = 'Requeue all unprocessed files for Celery'
 
     def check_file_raw_valid(self, file_object):
-        if file_object['basename'] != '23andMe-genotyping.txt':
+        if file_object['basename'] != 'AncestryDNA-genotyping.txt':
             return False
-        if file_object['metadata']['description'] != "23andMe full genotyping data, original format":
+        if file_object['metadata']['description'] != "AncestryDNA full genotyping data, original format":
             return False
-        if file_object['metadata']['tags'] != ['23andMe', 'genotyping']:
+        if file_object['metadata']['tags'] != ['AncestryDNA', 'genotyping']:
             return False
         return True
 
     def check_file_vcf_valid(self, file_object):
-        if file_object['basename'] != '23andMe-genotyping.vcf.bz2':
+        if file_object['basename'] != 'AncestryDNA-genotyping.vcf.bz2':
             return False
-        if file_object['metadata']['description'] != "23andMe full genotyping data, VCF format":
+        if file_object['metadata']['description'] != "AncestryDNA full genotyping data, VCF format":
             return False
-        if file_object['metadata']['tags'] != ['23andMe', 'genotyping', 'vcf']:
+        if file_object['metadata']['tags'] != ['AncestryDNA', 'genotyping', 'vcf']:
             return False
         return True
 

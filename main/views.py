@@ -98,6 +98,8 @@ def upload_file_to_oh(oh_member, filehandle, metadata):
     if req3.status_code != 200:
         raise raise_http_error(complete_url, req2,
                                'Bad response when completing upload.')
+    clean_uploaded_file.delay(oh_member.get_access_token(**client_info),
+                              int(req1.json()['id']))
 
 
 def iterate_files_upload(request):

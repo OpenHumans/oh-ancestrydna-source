@@ -202,13 +202,13 @@ def clean_raw_ancestrydna(closed_input_file):
 
     if check_header_lines(header_p_lines, HEADER_V1, 'HEADER_V1'):
         for line in HEADER_V1:
-            output.write(line+'\r\n')
+            output.write(line+'\n')
     elif check_header_lines(header_p_lines, HEADER_V2, 'HEADER_V2'):
         for line in HEADER_V2:
-            output.write(line+'\r\n')
+            output.write(line+'\n')
     elif check_header_lines(header_p_lines, HEADER_V3, 'HEADER_V3'):
         for line in HEADER_V3:
-            output.write(line+'\r\n')
+            output.write(line+'\n')
     else:
         logger.warn("AncestryDNA header didn't match expected formats")
 

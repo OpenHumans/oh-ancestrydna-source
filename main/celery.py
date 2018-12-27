@@ -47,7 +47,7 @@ app = Celery('proj')
 #   should have a `CELERY_` prefix.
 app.config_from_object('django.conf:settings', namespace='CELERY')
 app.conf.update(CELERY_BROKER_URL=os.getenv('REDIS_URL','redis://'),
-                CELERY_RESULT_BACKEND=os.getenv('REDIS_URL','redis://')
+                CELERY_RESULT_BACKEND=os.getenv('REDIS_URL','redis://'))
 
 # Load task modules from all registered Django app configs.
 app.autodiscover_tasks()
